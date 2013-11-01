@@ -1,0 +1,6 @@
+alias ls='ls --color=auto'
+alias ll='ls --color=auto -la'
+alias untargz='tar -zxvf'
+alias untarbz2='tar -jxvf'
+alias targz='tar -pczf'
+alias randpass='head -c 500 /dev/urandom | tr -dc a-zA-Z0-9 | head -c 8 | { read randpass; echo $randpass; }'
