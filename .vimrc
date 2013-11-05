@@ -16,7 +16,7 @@ if !exists("autocommands_loaded")
   autocmd BufNewFile *.py 0r ~/.vim/skel/python.py
 
   autocmd BufRead,BufNewFile,FileReadPost *.html set tabstop=4 noexpandtab autoindent
-  autocmd BufRead,BufNewFile,FileReadPost *.erb set tabstop=4 shiftwidth=4 softtabstop=4 expandtab autoindent
+  autocmd BufRead,BufNewFile,FileReadPost *.erb set tabstop=2 shiftwidth=2 softtabstop=2 expandtab autoindent
   autocmd BufNewFile *.html 0r ~/.vim/skel/index.html
 
   autocmd BufRead,BufNewFile,FileReadPost *.php set tabstop=4 noexpandtab autoindent
