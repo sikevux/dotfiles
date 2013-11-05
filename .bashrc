@@ -25,4 +25,5 @@ export PS1='\[\033[G\]\
 :\W$(__git_ps1 " (%s)")\$ '
 
 export PATH=~/.gem/ruby/2.0.0/bin:$PATH
+export GEM_HOME=~/.gem/ruby/2.0.0
 
