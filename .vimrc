@@ -11,6 +11,9 @@ match WhitespaceEOL /\s\+$/
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 match OverLength /\%81v.\+/
 
+" NERDTree
+nnoremap nt :NERDTree<CR>
+
 if !exists("autocommands_loaded")
   let autocommands_loaded = 1
   autocmd BufRead,BufNewFile,FileReadPost *.py source ~/.vim/python2
