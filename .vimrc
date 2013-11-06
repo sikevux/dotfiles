@@ -1,3 +1,4 @@
+execute pathogen#infect()
 set number
 set background=dark
 syntax enable
