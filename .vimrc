@@ -13,6 +13,7 @@ match OverLength /\%81v.\+/
 
 " NERDTree
 nnoremap nt :NERDTree<CR>
+autocmd vimenter * if !argc() | NERDTree | endif " Open if no files were specified
 
 if !exists("autocommands_loaded")
   let autocommands_loaded = 1
