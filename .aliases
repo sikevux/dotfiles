@@ -8,6 +8,6 @@ alias sweechat='screen -raAd weechat'
 
 if [ `lsb_release -si` == 'Ubuntu' ]; then
 	alias sysupdate='sudo apt-get update && sudo apt-get upgrade'
-elif [ `lsb_release -si` == 'arch' ]; then
+elif [ `lsb_release -si` == 'Arch' ]; then
 	alias sysupdate='sudo pacman -Syu'
 fi
