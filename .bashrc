@@ -17,8 +17,7 @@ if [ -r /usr/share/git/completion/git-completion.bash ]; then
 	source /usr/share/git/completion/git-completion.bash
 fi
 
-GIT_PS1=$(__git_ps1 " (%s)")
-export PS1="\[\e[G\][\A|$?]\[\e[1m\]\u@\h\[\e[0m\]:\W$GIT_PS1\$ "
+export PS1="\[\e[G\][\A|$?]\[\e[1m\]\u@\h\[\e[0m\]:\W$(__git_ps1 ' (%s)')\$ "
 
 export PATH=~/bin:~/.gem/ruby/2.0.0/bin:$PATH
 export GEM_HOME=~/.gem/ruby/2.0.0
