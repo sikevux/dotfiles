@@ -4,7 +4,7 @@ alias untargz='tar -zxvf'
 alias untarbz2='tar -jxvf'
 alias targz='tar -pczf'
 alias randpass='head -c 500 /dev/urandom | tr -dc a-zA-Z0-9 | head -c 8 | { read randpass; echo $randpass; }'
-alias sweechat='screen -raAd weechat'
+alias sweechat='eval `resize` && screen -raAd weechat'
 
 if [ `lsb_release -si` == 'Ubuntu' ]; then
 	alias sysupdate='sudo apt-get update && sudo apt-get upgrade'
