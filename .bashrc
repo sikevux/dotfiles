@@ -19,6 +19,6 @@ fi
 
 export PS1='\[\e[G\][\A|$?]\[\e[1m\]\u@\h\[\e[0m\]:\W$(__git_ps1 " (%s)")\$ '
 
-export PATH=~/bin:~/.gem/ruby/2.0.0/bin:$PATH
+export PATH=/usr/local/heroku/bin:~/bin:~/.gem/ruby/2.0.0/bin:$PATH
 export GEM_HOME=~/.gem/ruby/2.0.0
 
