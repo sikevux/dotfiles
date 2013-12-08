@@ -20,3 +20,13 @@ extract () {
   fi
 }
 
+authplain () {
+  echo -n "Username: "
+  read username
+  echo -n "Password: "
+  read -s password
+  echo
+  perl -MMIME::Base64 -e "print encode_base64(\"\000${username}\000${password}\")"
+}
+
+# vim: set ft=sh:
