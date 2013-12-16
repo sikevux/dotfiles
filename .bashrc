@@ -15,6 +15,8 @@ unset file
 
 if [ -r /usr/share/git/completion/git-completion.bash ]; then
 	source /usr/share/git/completion/git-completion.bash
+elif [ -r /usr/share/git-core/contrib/completion/git-prompt.sh ]; then
+	source /usr/share/git-core/contrib/completion/git-prompt.sh
 fi
 
 export PS1='\[\e[G\][\A|$?]\[\e[1m\]\u@\h\[\e[0m\]:\W$(__git_ps1 " (%s)")\$ '
