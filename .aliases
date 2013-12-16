@@ -11,5 +11,7 @@ if [ `lsb_release -si` == 'Ubuntu' ]; then
 	alias sysupdate='sudo apt-get update && sudo apt-get upgrade'
 elif [ `lsb_release -si` == 'Arch' ]; then
 	alias sysupdate='sudo pacman -Syu'
+elif [`lsb_release -si` == 'Fedora' ]; then
+	aliass sysupdate='su -c "yum -y update"'
 fi
 shopt -u nocasematch
