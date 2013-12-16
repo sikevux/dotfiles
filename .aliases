@@ -6,8 +6,10 @@ alias targz='tar -pczf'
 alias randpass='head -c 500 /dev/urandom | tr -dc a-zA-Z0-9 | head -c 8 | { read randpass; echo $randpass; }'
 alias sweechat='eval `resize` && screen -raAd weechat'
 
+shopt -s nocasematch
 if [ `lsb_release -si` == 'Ubuntu' ]; then
 	alias sysupdate='sudo apt-get update && sudo apt-get upgrade'
 elif [ `lsb_release -si` == 'Arch' ]; then
 	alias sysupdate='sudo pacman -Syu'
 fi
+shopt -u nocasematch
