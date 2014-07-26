@@ -12,6 +12,10 @@ if [ `lsb_release -si` == 'Ubuntu' ]; then
 elif [ `lsb_release -si` == 'Arch' ]; then
 	alias sysupdate='sudo pacman -Syu'
 elif [`lsb_release -si` == 'Fedora' ]; then
-	aliass sysupdate='su -c "yum -y update"'
+	if [ -z "$(which dnf" ]; then
+		alias sysupdate='su -c "yum check-update && yum -y update"'
+	else
+		alias sysupdate='su -c "dnf check-update && dnf -y update"'
+	fi
 fi
 shopt -u nocasematch
