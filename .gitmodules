@@ -4,3 +4,6 @@
 [submodule ".vim/bundle/delimitMate"]
 	path = .vim/bundle/delimitMate
 	url = git://github.com/Raimondi/delimitMate.git
+[submodule ".vim/bundle/vim-rooter"]
+	path = .vim/bundle/vim-rooter
+	url = git://github.com/airblade/vim-rooter.git
