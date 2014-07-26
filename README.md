@@ -5,7 +5,7 @@
 ### Using Git and the bootstrap script
 
 ```bash
-git clone https://github.com/sikevux/dotfiles.git && cd dotfiles && source bootstrap.sh
+git clone https://github.com/sikevux/dotfiles.git && cd dotfiles && git submodule init && git submodule update && source bootstrap.sh
 ```
 
 To update, `cd` into your local `dotfiles` repository and then:
