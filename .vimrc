@@ -1,11 +1,28 @@
+set nohlsearch
 execute pathogen#infect()
 set number
 set background=dark
+set autoindent
+set noexpandtab
+set tabstop=4
+set shiftwidth=4
+set listchars=eol:$,trail:~,extends:>,precedes:<
+set backupcopy=auto,breakhardlink
+
+map <F4> :w<CR> :compiler gradle<CR> :make test<CR>:cw 4<CR>
+
+let delimitMate_expand_cr = 1
+set list lcs=tab:\│\ 
+
 syntax enable
 
 " Highlight end of line whitespace.
 highlight WhitespaceEOL ctermbg=red guibg=red
 match WhitespaceEOL /\s\+$/
+
+" Highlight spaces used for indenting
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /^\s\+/
 
 " Highlight everything after character 80 on a line.
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
