@@ -45,10 +45,11 @@ export LESSCHARSET="utf-8"
 export GOPATH="$HOME/go"
 if command -v emacsclient &>/dev/null; then
     export EDITOR="emacsclient -c"
-elif command -v emacs &>/dev/null
+elif command -v emacs &>/dev/null; then
     export EDITOR="emacs"
 else
     export EDITOR="mg"
+fi
 
 case $(uname) in
     Darwin)
