@@ -28,8 +28,11 @@ setopt appendhistory
 unsetopt beep
 bindkey -e
 
-GPG_TTY=$(tty)
-export GPG_TTY
+if [ -z "$GPG_TTY" ]; then
+    GPG_TTY=$(tty)
+    export GPG_TTY
+fi
+
 if [ -f "${HOME}/.gpg-agent-info" ]; then
     . "${HOME}/.gpg-agent-info"
     export GPG_AGENT_INFO
@@ -44,8 +47,22 @@ fi
 export LESS='-R'
 export LESSCHARSET="utf-8"
 export GOPATH="$HOME/go"
+
+for test_path in $HOME/homebrew/bin \
+		     $HOME/homebrew/sbin \
+		     $GOPATH/bin \
+		     $HOME/homebrew/opt/ncurses/bin \
+		     $HOME/homebrew/opt/libpq/bin \
+		     /usr/local/haskel/hask-bin \
+		     $HOME/bin/; do
+    if [ -d $test_path ]; then
+	export PATH="$test_path:$PATH"
+    fi
+done
+
 if command -v emacsclient &>/dev/null; then
     export EDITOR="emacsclient -c"
+    alias emacs="$(command -v emacsclient) -c"
 elif command -v emacs &>/dev/null; then
     export EDITOR="emacs"
 else
@@ -54,22 +71,21 @@ fi
 
 case $(uname) in
     Darwin)
-	export PATH="$GOPATH/bin:$HOME/jdk-11.0.2+9/Contents/Home/bin:$HOME/homebrew/sbin:$HOME/homebrew/bin:$PATH"
 	export HOMEBREW_NO_ANALYTICS=1
 	export HOMEBREW_NO_INSECURE_REDIRECT=1
 	export HOMEBREW_CASK_OPTS=--require-sha
-	export PATH="/Users/pgreco/homebrew/opt/ncurses/bin:$PATH"
-	export PATH="/Users/pgreco/homebrew/opt/libpq/bin:$PATH"
-	alias emacs="/Users/pgreco/homebrew/bin/emacsclient -c"
-	source $(brew --prefix asdf)/asdf.sh
-	export PATH="/Users/pgreco/bin/:$PATH"
+	if [ -f "$(brew --prefix asdf)/asdf.sh" ]; then
+	    source $(brew --prefix asdf)/asdf.sh
+	fi
 	;;
     Linux)
 	export LANG="en_US.UTF-8"
 	export LC_CTYPE="en_US.UTF-8"
 	export GTK_IM_MODULE="xim"
 	export LC_ALL="en_US.UTF-8"
-	export PATH=$PATH:$GOPATH/bin:/usr/local/haskel/hask-bin
-	alias emacs="emacsclient -c"
 	alias docker=podman
 esac
+
+if [ -f ~/.env ]; then
+    source ~/.env
+fi
