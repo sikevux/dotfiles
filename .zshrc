@@ -8,6 +8,7 @@ export UPDATE_ZSH_DAYS=5
 HIST_STAMPS="yyyy-mm-dd"
 
 plugins=(
+  tmux
   terraform
 )
 
