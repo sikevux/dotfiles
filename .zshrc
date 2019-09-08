@@ -9,14 +9,6 @@ HIST_STAMPS="yyyy-mm-dd"
 
 plugins=(
   terraform
-  git
-  bundler
-  osx
-  rake
-  rbenv
-  ruby
-  aws
-  asdf
 )
 
 source $ZSH/oh-my-zsh.sh
