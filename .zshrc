@@ -49,9 +49,11 @@ for test_path in $HOME/homebrew/bin \
 		     /usr/local/haskel/hask-bin \
 		     $HOME/bin/; do
     if [ -d $test_path ]; then
-	export PATH="$test_path:$PATH"
+	PATH="$test_path:$PATH"
     fi
 done
+
+export PATH
 
 if command -v emacsclient &>/dev/null; then
     export EDITOR="emacsclient -c"
