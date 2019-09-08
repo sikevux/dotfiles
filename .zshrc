@@ -2,6 +2,7 @@
 export ZSH="${HOME}/.oh-my-zsh"
 
 ZSH_THEME="robbyrussell"
+ZSH_TMUX_AUTOSTART="true"
 
 export UPDATE_ZSH_DAYS=5
 
